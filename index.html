@@ -70,17 +70,25 @@
 
     function trocarValor(span, linha, coluna)
     {
-        if(numeroJogador == 1)
+        if (matrizJogo[linha][coluna]== "")
         {
-            matrizJogo[linha][coluna] = "O"; 
-            span.innerHTML = "O";
-            numeroJogador = 2;
+            if(numeroJogador == 1)
+            {
+                matrizJogo[linha][coluna] = "O"; 
+                span.innerHTML = "O";
+                numeroJogador = 2;
 
 
-        }else {
-            matrizJogo[linha][coluna] = "X"; 
-             span.innerHTML = "X";
-             numeroJogador = 1;
+            }
+            else {
+                matrizJogo[linha][coluna] = "X"; 
+                span.innerHTML = "X";
+                numeroJogador = 1;
+
+            }
+        }
+        else {
+            alert('Campo ja utilizado');
         }
 
         console.log(matrizJogo);
