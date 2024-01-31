@@ -17,7 +17,11 @@
 
 </head>
 <body>
+
     <div class="container-fluid">
+
+        <h2 id="tituloJogador"></h2>
+
         <div class="row">
             <div class="col-4 celula">
                 <span onclick="trocarValor(this,0,0)">+</span>
@@ -64,6 +68,9 @@
         
     ];
 
+
+
+
     var numeroJogador = 1;
 
     console.log(matrizJogo);
@@ -77,6 +84,7 @@
                 matrizJogo[linha][coluna] = "O"; 
                 span.innerHTML = "O";
                 numeroJogador = 2;
+                document.getElementById('tituloJogador').innerHTML = 'Jogador 2 sua vez [O] '
 
 
             }
@@ -84,8 +92,59 @@
                 matrizJogo[linha][coluna] = "X"; 
                 span.innerHTML = "X";
                 numeroJogador = 1;
+                document.getElementById('tituloJogador').innerHTML = 'Jogador 1 sua vez [X]'
 
             }
+            if ((matrizJogo[0][0] == matrizJogo[0][1]) && 
+                (matrizJogo[0][0] == matrizJogo[0][2]) &&
+                (matrizJogo[0][0] != "")){
+                    alert("Jogador " + matrizJogo[0][0] + " foi vencedor1")
+                }
+
+            else if  ((matrizJogo[1][0] == matrizJogo[1][1]) && 
+                (matrizJogo[1][0] == matrizJogo[1][2]) &&
+                (matrizJogo[1][0] != "")){
+                    alert("Jogador " + matrizJogo[1][0] + " foi vencedor2")
+                }
+
+            else if  ((matrizJogo[2][0] == matrizJogo[2][1]) && 
+                (matrizJogo[2][1] == matrizJogo[2][2]) &&
+                (matrizJogo[2][0] != "")){
+                    alert("Jogador " + matrizJogo[2][0] + " foi vencedor3")
+                } 
+
+            else if  ((matrizJogo[0][0] == matrizJogo[1][0]) && 
+                (matrizJogo[1][0] == matrizJogo[2][0]) &&
+                (matrizJogo[0][0] != "")){
+                    alert("Jogador " + matrizJogo[0][0] + " foi vencedor4")
+                }
+            else if  ((matrizJogo[0][1] == matrizJogo[1][1]) && 
+                (matrizJogo[1][1] == matrizJogo[2][1]) &&
+                (matrizJogo[2][1] != "")){
+                    alert("Jogador " + matrizJogo[2][1] + " foi vencedor5")
+                }
+            else if  ((matrizJogo[0][2] == matrizJogo[1][2]) && 
+                (matrizJogo[1][2] == matrizJogo[2][2]) &&
+                (matrizJogo[0][2] != "")){
+                    alert("Jogador " + matrizJogo[0][2] + " foi vencedor6")
+                }
+            else if  ((matrizJogo[0][0] == matrizJogo[1][1]) && 
+                (matrizJogo[1][1] == matrizJogo[2][2]) &&
+                (matrizJogo[0][0] != "")){
+                    alert("Jogador " + matrizJogo[0][0] + " foi vencedor7")
+                }
+            else if  ((matrizJogo[0][2] == matrizJogo[1][1]) && 
+                (matrizJogo[1][1] == matrizJogo[2][0]) &&
+                (matrizJogo[0][2] != "")){
+                    alert("Jogador " + matrizJogo[0][2] + " foi vencedor8")
+                }
+
+
+            
+                
+
+            
+            
         }
         else {
             alert('Campo ja utilizado');
